@@ -1,0 +1,25 @@
+package com.pract_3;
+import java.util.Scanner;
+
+public class Recursion {
+    public void recursion(int i) {
+        int x = 1;
+        try {
+            int m = x / i; // To be sure, that we are not dividing on zero
+            System.out.println(i);
+            i--;
+            recursion(i);
+        }
+        catch(ArithmeticException e) { // Arithmeticalexception "dividing on zero" throws out
+            return;
+        }
+    }
+    
+    public static void main(String[] args) {
+        int num;
+        Scanner in = new Scanner(System.in);
+        num = in.nextInt();
+        Recursion r = new Recursion();
+        r.recursion(num);
+    }
+}
